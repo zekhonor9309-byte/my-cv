@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- عنوان الموقع الأساسي (سيتم تحديثه من i18n) -->
+  <title>زكريا يحيى الحسني | عالم بيانات وذكاء اصطناعي</title>
+  <meta name="author" content="زكريا يحيى الحسني">
+  <meta name="robots" content="index, follow">
+
+  <!-- وصف الموقع (سيتم تحديثه من i18n) -->
+  <meta name="description" content="موقع سيرة ذاتية احترافي لعالم بيانات وذكاء اصطناعي - هوية رقمية reflect المهارات والخبرات">
+
+  <!-- Open Graph - العربي (افتراضي) -->
+  <meta property="og:title" content="زكريا يحيى الحسني | عالم بيانات وذكاء اصطناعي">
+  <meta property="og:description" content="موقع سيرة ذاتية احترافي لعالم بيانات وذكاء اصطناعي - هوية رقمية reflect المهارات والخبرات">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_AR">
+  <meta property="og:url" content="https://zakaria-alhasani.com">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="صورة تعريفية لزكريا يحيى الحسني">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="زكريا يحيى الحسني | عالم بيانات وذكاء اصطناعي">
+  <meta name="twitter:description" content="موقع سيرة ذاتية احترافي لعالم بيانات وذكاء اصطناعي">
+  <meta name="twitter:image" content="assets/images/og-image.jpg">
+  <meta name="twitter:creator" content="@zakaria_alhasani">
+
+  <!-- خطوط Google (عربية وإنجليزية) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- أنماط الموقع -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+
+  <!-- أيقونات (Emoji / SVG مدمج) -->
+  <style>
+    .icon { display: inline-block; width: 1em; height: 1em; line-height: 1; }
+  </style>
+</head>
+<body>
+  <!-- ترويسة / شريط التنقل -->
+  <header class="site-header" id="header">
+    <div class="container nav-wrapper">
+      <a href="#" class="nav-brand" aria-label="الصفحة الرئيسية">
+        ZA
+      </a>
+
+      <nav class="nav-desktop">
+        <ul class="nav-list">
+          <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="#about" data-i18n="nav.about">عني</a></li>
+          <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
+          <li><a href="#education" data-i18n="nav.education">التعليم</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">المشاريع</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">الخبرات</a></li>
+          <li><a href="#certificates" data-i18n="nav.certificates">الشهادات</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">التواصل</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="lang-toggle" id="lang-toggle" data-action="toggle-lang" aria-label="تبديل اللغة">AR/EN</button>
+        <button class="theme-toggle" data-action="toggle-theme" aria-label="تبديل الوضع">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <a href="cv-pdf.html" class="btn btn-outline" data-i18n="nav.download">تحميل السيرة الذاتية</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- القائمة المتحركة للجوال (مخفية افتراضياً) -->
+  <nav class="mobile-menu" id="mobile-menu" hidden>
+    <ul class="nav-list" style="flex-direction: column; gap: var(--space-md); padding: var(--space-lg); background: var(--color-bg); border-block-end: 1px solid var(--color-border);">
+      <li><a href="#home" data-i18n="nav.home">الرئيسية</a></li>
+      <li><a href="#about" data-i18n="nav.about">عني</a></li>
+      <li><a href="#skills" data-i18n="nav.skills">المهارات</a></li>
+      <li><a href="#education" data-i18n="nav.education">التعليم</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">المشاريع</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">الخبرات</a></li>
+      <li><a href="#certificates" data-i18n="nav.certificates">الشهادات</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">التواصل</a></li>
+      <li style="margin-block-start: var(--space-lg); border-block-start: 1px solid var(--color-border); padding-block-start: var(--space-md);">
+        <a href="cv-pdf.html" class="btn btn-primary" data-i18n="nav.download">تحميل السيرة الذاتية</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- القسم الرئيسي (Hero) -->
+  <section class="hero" id="home" aria-labelledby="hero-heading">
+    <div class="hero-bg"></div>
+    <div class="hero-container container">
+      <div class="hero-content">
+        <span class="hero-greeting" data-i18n="hero.greeting">مرحباً، أنا</span>
+        <h1 id="hero-heading" class="hero-name" data-i18n="hero.name">زكريا يحيى الحسني</h1>
+        <h2 class="hero-title" data-i18n="hero.title">عالم بيانات وذكاء اصطناعي</h2>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">أصمم حلولاً ذكية تعتمد على البيانات لحل المشكلات المعقدة، وأسعى لبناء هوية رقمية احترافية تعكس شغفي بالتقنية والتطوير.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary" data-i18n="hero.contactBtn">تواصل معي</a>
+          <a href="cv-pdf.html" class="btn btn-outline" data-i18n="hero.downloadBtn">تحميل السيرة الذاتية PDF</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-label="صورة شخصية احترافية">
+        <!-- صورة مؤقتة - استبدلها بصورتك الفعلية في assets/images/profile.jpg -->
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 400 400'%3E%3Crect fill='%23e2e8f0' width='100%25' height='100%25'/%3E%3Ccircle cx='200' cy='180' r='90' fill='%23cbd5e1'/%3E%3Cpath d='M 200 280 Q 150 320 200 360 Q 250 320 200 280 Z' fill='%2394a3b8'/%3E%3C/svg%3E" alt="صورة شخصية احترافية لزكريا يحيى الحسني" loading="lazy">
+        <div class="hero-badge" style="position:absolute; inset-block-end: 1rem; inset-inline-start: 1rem; background: var(--color-white); padding: var(--space-sm) var(--space-md); border-radius: var(--radius-full); box-shadow: var(--shadow-md); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); color: var(--color-primary); border: 1px solid var(--color-border);">
+          <span style="display:inline-flex; align-items:center; gap: var(--space-xs);">📍 <span data-i18n-placeholder="about.location"></span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- نبذة عني -->
+  <section class="section" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="about-heading" data-i18n="about.title">عنّي</h2>
+        <p data-i18n="about.intro">أنا زكريا يحيى الحسني، عالم بيانات ومتخصص في الذكاء الاصطناعي، شغوف بتحويل البيانات إلى قرارات حكيمة وحلول تقنية تساهم في تطوير المؤسسات وتحسين جودة الخدمات.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h3 data-i18n="about.interestsTitle">الاهتمامات المهنية</h3>
+          <ul class="about-list" id="about-interests"></ul>
+
+          <h3 style="margin-block-start: var(--space-lg);" data-i18n="about.goalsTitle">الأهداف والطموحات</h3>
+          <ul class="about-list" id="about-goals"></ul>
+
+          <h3 style="margin-block-start: var(--space-lg);" data-i18n="about.strengthsTitle">نقاط القوة</h3>
+          <ul class="about-list" id="about-strengths"></ul>
+        </div>
+
+        <aside class="sidebar-card">
+          <h4>معلومات سريعة</h4>
+          <ul>
+            <li><strong>الاسم:</strong> <span data-i18n="hero.name">زكريا يحيى الحسني</span></li>
+            <li><strong>المسمى الوظيفي:</strong> <span data-i18n="hero.title">عالم بيانات وذكاء اصطناعي</span></li>
+            <li><strong>الموقع:</strong> <span id="about-location" data-i18n-placeholder="about.location">المدينة، الدولة</span></li>
+            <li><strong>البريد:</strong> <a href="mailto:" id="about-email" data-i18n-placeholder="about.email">your.email@example.com</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- المهارات -->
+  <section class="section" id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="skills-heading" data-i18n="skills.title">المهارات</h2>
+        <p>تقسيم المهارات إلى تصنيفات لعرضها بشكل واضح ومنظم دون مبالغة في نسب الإتقان.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 data-i18n="skills.technical">المهارات التقنية</h3>
+          <ul class="skill-list" id="skills-technical"></ul>
+        </div>
+        <div class="skill-category">
+          <h3 data-i18n="skills.programming">لغات البرمجة</h3>
+          <ul class="skill-list" id="skills-programming"></ul>
+        </div>
+        <div class="skill-category">
+          <h3 data-i18n="skills.tools">الأدوات والبرامج</h3>
+          <ul class="skill-list" id="skills-tools"></ul>
+        </div>
+        <div class="skill-category">
+          <h3 data-i18n="skills.soft">المهارات الشخصية</h3>
+          <ul class="skill-list" id="skills-soft"></ul>
+        </div>
+        <div class="skill-category skill-languages">
+          <h3 data-i18n="skills.languages">اللغات</h3>
+          <ul class="skill-list" id="skills-languages"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- التعليم -->
+  <section class="section" id="education" aria-labelledby="education-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="education-heading" data-i18n="education.title">التعليم</h2>
+        <p>المؤهل العلمي والدورات التدريبية والشهادات الحاصل عليها.</p>
+      </div>
+
+      <div class="education-timeline" id="education-timeline"></div>
+    </div>
+  </section>
+
+  <!-- المشاريع -->
+  <section class="section" id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="projects-heading" data-i18n="projects.title">المشاريع والأعمال</h2>
+        <p>مجموعة من المشاريع العملية التي نفذتها، قابلة للإضافة مستقبلاً.</p>
+      </div>
+
+      <div class="projects-grid" id="projects-grid"></div>
+    </div>
+  </section>
+
+  <!-- الخبرات العملية -->
+  <section class="section" id="experience" aria-labelledby="experience-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="experience-heading" data-i18n="experience.title">الخبرات العملية</h2>
+        <p>الخبرات الوظيفية والتدريبية (يتم إخفاؤها تلقائياً إذا كانت فارغة).</p>
+      </div>
+
+      <div class="experience-list" id="experience-list"></div>
+    </div>
+  </section>
+
+  <!-- الشهادات والإنجازات -->
+  <section class="section" id="certificates" aria-labelledby="certificates-heading">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="certificates-heading" data-i18n="certificates.title">الشهادات والإنجازات</h2>
+        <p>الشهادات الاحترافية والإنجازات التي حصلت عليها.</p>
+      </div>
+
+      <div class="certificates-grid" id="certificates-grid"></div>
+    </div>
+  </section>
+
+  <!-- التواصل -->
+  <section class="section" id="contact" aria-labelledby="contact-heading">
+    <div class="container contact-container">
+      <div class="contact-info">
+        <h3 id="contact-heading" data-i18n="contact.title">التواصل</h3>
+
+        <div class="contact-item">
+          <span class="icon">✉️</span>
+          <div>
+            <strong data-i18n="contact.email">البريد الإلكتروني</strong>
+            <a href="mailto:" id="contact-email" data-i18n-placeholder="contact.email">your.email@example.com</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <span class="icon">📞</span>
+          <div>
+            <strong data-i18n="contact.phone">رقم الهاتف</strong>
+            <a href="tel:" id="contact-phone" data-i18n-placeholder="contact.phone">+966 50 000 0000</a>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <h4 data-i18n="contact.social">وسائل التواصل الاجتماعي</h4>
+          <div class="social-links">
+            <a href="#" id="social-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn" data-i18n-aria="contact.linkedin">in</a>
+            <a href="#" id="social-github" target="_blank" rel="noopener" aria-label="GitHub" data-i18n-aria="contact.github">octocat</a>
+            <a href="#" id="social-portfolio" target="_blank" rel="noopener" aria-label="معرض الأعمال" data-i18n-aria="contact.portfolio">💼</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 data-i18n="contact.send">إرسال رسالة</h3>
+        <form id="contact-form" novalidate>
+          <div class="form-group">
+            <label for="cf-name" data-i18n="contact.nameLabel">اسمك</label>
+            <input type="text" id="cf-name" name="name" required data-i18n-placeholder="contact.nameLabel">
+          </div>
+          <div class="form-group">
+            <label for="cf-email" data-i18n="contact.emailLabel">بريدك الإلكتروني</label>
+            <input type="email" id="cf-email" name="email" required data-i18n-placeholder="contact.emailLabel">
+          </div>
+          <div class="form-group">
+            <label for="cf-message" data-i18n="contact.messageLabel">رسالتك</label>
+            <textarea id="cf-message" name="message" required data-i18n-placeholder="contact.messageLabel"></textarea>
+          </div>
+          <p class="form-note" data-i18n="contact.note">جميع الحقول مطلوبة</p>
+          <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="contact.submit">إرسال</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- التذييل -->
+  <footer class="site-footer" aria-label="تذييل الموقع">
+    <div class="container footer-content">
+      <div class="footer-text">
+        <span data-i18n="footer.rights">جميع الحقوق محفوظة</span> &
+        <span>© <span id="footer-year"></span> <strong data-i18n="footer.by">زكريا يحيى الحسني</strong></span>
+      </div>
+      <a href="cv-pdf.html" class="download-btn-footer" data-i18n="footer.download">تحميل السيرة الذاتية</a>
+    </div>
+  </footer>
+
+  <!-- سكريبتات الموقع -->
+  <script src="data/cv-data.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

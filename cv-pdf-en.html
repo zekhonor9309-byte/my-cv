@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakaria Yahya Al-Hasani - CV</title>
+  <meta name="author" content="Zakaria Yahya Al-Hasani">
+  <meta name="description" content="Professional CV - Zakaria Yahya Al-Hasani - Data Scientist & AI Engineer">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================================
+       قالب السيرة الذاتية PDF - ATS Friendly (النسخة الإنجليزية)
+       تصميم مستقل بالكامل، تخطيط عمود واحد LTR، نص أسود/رمادي داكن
+       ===================================================================== */
+
+    @page {
+      size: A4;
+      margin: 2cm 2cm 2.2cm 2cm;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .no-print, .nav, .button, .menu-toggle { display: none !important; }
+
+    @media print {
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .no-print { display: none !important; }
+      a { color: #1a1a1a; text-decoration: none; }
+    }
+
+    .cv-container { max-width: 100%; padding: 0; }
+
+    /* ----- الرأس ----- */
+    .cv-header {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+    }
+
+    .cv-name {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .cv-title {
+      font-size: 13pt;
+      font-weight: 600;
+      color: #4a4a4a;
+      margin: 0 0 10px 0;
+    }
+
+    .cv-subtitle {
+      font-size: 10pt;
+      color: #555555;
+      margin: 0 0 4px 0;
+      line-height: 1.5;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 9.5pt;
+      color: #333333;
+      margin-top: 10px;
+    }
+
+    .cv-contact span { white-space: nowrap; }
+
+    /* ----- عناوين الأقسام ----- */
+    .section-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 22px 0 10px 0;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid #1a1a1a;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    /* ----- ملخص مهني ----- */
+    .summary {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+
+    /* ----- التعليم ----- */
+    .edu-item { margin-bottom: 16px; page-break-inside: avoid; }
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-institution { font-size: 11pt; font-weight: 700; color: #1a1a1a; margin: 0 0 3px 0; }
+    .edu-degree { font-size: 10.5pt; font-weight: 600; color: #333333; margin: 0 0 3px 0; }
+    .edu-field { font-size: 10pt; color: #4a4a4a; margin: 0 0 4px 0; }
+    .edu-dates { font-size: 9pt; color: #666666; font-style: normal; margin: 0 0 6px 0; }
+
+    .edu-courses {
+      font-size: 9.5pt; color: #333333; margin: 4px 0 0 0;
+      padding-inline-start: 18px; list-style-type: disc;
+    }
+    .edu-courses li { margin-bottom: 3px; }
+
+    /* ----- المهارات ----- */
+    .skills-group { margin-bottom: 14px; page-break-inside: avoid; }
+    .skills-group:last-child { margin-bottom: 0; }
+
+    .skills-label {
+      font-weight: 700; color: #1a1a1a; font-size: 10.5pt;
+      margin-bottom: 5px; display: block;
+    }
+
+    .skills-list {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 0; padding: 0; list-style: none;
+    }
+
+    .skills-list li {
+      font-size: 9pt; color: #333333;
+      border: 1px solid #cccccc; border-radius: 12px;
+      padding: 3px 10px; background: #fafafa;
+    }
+
+    .languages-list { margin: 0; padding: 0; list-style: none; }
+    .languages-list li {
+      font-size: 9.5pt; color: #333333;
+      margin-bottom: 4px; border-bottom: 0.5px solid #eeeeee; padding-bottom: 3px;
+    }
+    .lang-level { font-weight: 400; color: #666666; font-size: 9pt; }
+
+    /* ----- المشاريع ----- */
+    .project-item { margin-bottom: 16px; page-break-inside: avoid; }
+    .project-item:last-child { margin-bottom: 0; }
+
+    .project-name { font-size: 11pt; font-weight: 700; color: #1a1a1a; margin: 0 0 3px 0; }
+    .project-tech {
+      font-size: 9pt; font-weight: 600; color: #4a4a4a;
+      text-transform: uppercase; letter-spacing: 0.4px;
+      margin: 0 0 5px 0; display: block;
+    }
+    .project-desc { font-size: 10pt; color: #2a2a2a; margin: 0; text-align: justify; }
+
+    /* ----- الخبرات ----- */
+    .exp-item { margin-bottom: 16px; page-break-inside: avoid; }
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-company { font-size: 11pt; font-weight: 700; color: #1a1a1a; margin: 0 0 2px 0; }
+    .exp-role { font-size: 10.5pt; font-weight: 600; color: #333333; margin: 0 0 3px 0; }
+    .exp-period { font-size: 9pt; color: #666666; font-style: normal; margin: 0 0 6px 0; }
+    .exp-desc { font-size: 10pt; color: #2a2a2a; margin: 0; text-align: justify; }
+
+    /* ----- الشهادات ----- */
+    .cert-item { margin-bottom: 14px; page-break-inside: avoid; }
+    .cert-item:last-child { margin-bottom: 0; }
+
+    .cert-name { font-size: 10.5pt; font-weight: 700; color: #1a1a1a; margin: 0 0 3px 0; }
+    .cert-issuer { font-size: 9.5pt; color: #333333; margin: 0 0 3px 0; }
+    .cert-date { font-size: 9pt; color: #666666; margin: 0; }
+
+    .avoid-break { page-break-inside: avoid; }
+
+    .lang-switch {
+      text-align: center; margin-top: 6px; font-size: 9pt; color: #666666; display: none;
+    }
+    @media print { .lang-switch { display: none !important; } }
+  </style>
+</head>
+<body>
+
+  <div class="lang-switch no-print">
+    <a href="cv-pdf.html" style="color:#1a1a1a; text-decoration:underline;">عرض النسخة العربية (Arabic Version)</a>
+  </div>
+
+  <div class="cv-container">
+    <header class="cv-header">
+      <h1 class="cv-name">Zakaria Yahya Al-Hasani</h1>
+      <div class="cv-title">Data Scientist &amp; AI Engineer</div>
+      <div class="cv-subtitle">
+        Data Scientist and AI Specialist passionate about transforming data into wise decisions and technical solutions that contribute to developing institutions and improving service quality.
+      </div>
+      <div class="cv-contact">
+        <span>📍 City, Country</span>
+        <span>✉️ your.email@example.com</span>
+        <span>📞 +966 50 000 0000</span>
+        <span>🔗 linkedin.com/in/your-profile</span>
+        <span>🐙 github.com/your-profile</span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="avoid-break">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary">
+        I am Zakaria Yahya Al-Hasani, a Data Scientist and AI Specialist, passionate about transforming data into wise decisions and technical solutions that contribute to developing institutions and improving service quality. I have skills in data analysis, machine learning, and designing intelligent systems, with a commitment to quality and continuous self-learning.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="avoid-break">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="edu-institution">Islamic University of Minnesota</div>
+        <div class="edu-degree">Bachelor's Degree</div>
+        <div class="edu-field">Data Science and Artificial Intelligence</div>
+        <div class="edu-dates">2024 - Expected 2026</div>
+        <ul class="edu-courses">
+          <li>Diploma in English Language</li>
+          <li>Course in Fundamentals of Artificial Intelligence</li>
+          <li>Course in Comprehensive Accounting CAD Level 1</li>
+          <li>4 Research and Teaching Assistant Certificates</li>
+          <li>Course in Personality Analysis Skills</li>
+          <li>Course in Leadership Personality</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="avoid-break">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-group">
+        <span class="skills-label">Technical Skills</span>
+        <ul class="skills-list">
+          <li>Data Analysis</li>
+          <li>Statistical Modeling</li>
+          <li>Data Visualization</li>
+          <li>SQL Databases</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Programming Languages</span>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>R</li>
+          <li>SQL</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Tools &amp; Software</span>
+        <ul class="skills-list">
+          <li>Jupyter Notebook</li>
+          <li>Pandas</li>
+          <li>NumPy</li>
+          <li>Matplotlib</li>
+          <li>Scikit-learn</li>
+          <li>Git</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Soft Skills</span>
+        <ul class="skills-list">
+          <li>Analytical Thinking</li>
+          <li>Problem Solving</li>
+          <li>Self-Learning</li>
+          <li>Teamwork</li>
+          <li>Effective Communication</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Languages</span>
+        <ul class="languages-list">
+          <li><span style="font-weight:700;">Arabic</span> <span class="lang-level">- Native</span></li>
+          <li><span style="font-weight:700;">English</span> <span class="lang-level">- Intermediate</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="avoid-break">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-item">
+        <div class="project-name">Hajj Automation Application</div>
+        <span class="project-tech">HTML, CSS, JavaScript</span>
+        <p class="project-desc">
+          I developed a website that enables the company to automate its operations in facilitating Hajj pilgrims—from pilgrim registration to arranging their needs such as accommodation, catering, and transportation. The system enabled the company to align with Saudi Ministry of Hajj requirements and created easy portals for employees and pilgrims, significantly improving pilgrim satisfaction with the services provided.
+        </p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="avoid-break">
+      <h2 class="section-title">Certifications</h2>
+      <p style="font-size:9.5pt; color:#666666; margin:0;">No certificates recorded yet.</p>
+    </section>
+  </div>
+
+  <script src="data/cv-data.js"></script>
+  <script>
+    /**
+     * تعبئة صفحة PDF الإنجليزية من البيانات المركزية (cv-data.js)
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+      const isEn = document.documentElement.lang === "en";
+      const d = window.CV_DATA;
+      const p = d.personal;
+      const e = d.education;
+      const s = d.skills;
+      const proj = d.projects || [];
+      const certs = d.certificates || [];
+
+      setIf(".cv-name", isEn ? p.fullNameEn : p.fullNameAr);
+      setIf(".cv-title", isEn ? p.titleEn : p.titleAr);
+      setIf(".cv-subtitle", isEn ? p.summaryEn : p.summaryAr);
+
+      setIf(".cv-contact span:nth-child(1)", "📍 " + p.location);
+      setIf(".cv-contact span:nth-child(2)", "✉️ " + p.email);
+      setIf(".cv-contact span:nth-child(3)", "📞 " + p.phone);
+      setIf(".cv-contact span:nth-child(4)", "🔗 " + p.linkedin);
+      setIf(".cv-contact span:nth-child(5)", "🐙 " + p.github);
+
+      setIf(".summary", isEn ? p.summaryEn : p.summaryAr);
+
+      const edu = document.querySelector(".edu-item");
+      if (edu && e) {
+        edu.querySelector(".edu-institution").textContent = isEn ? e.institutionEn : e.institutionAr;
+        edu.querySelector(".edu-degree").textContent = isEn ? e.degreeEn : e.degreeAr;
+        edu.querySelector(".edu-field").textContent = isEn ? e.fieldEn : e.fieldAr;
+        edu.querySelector(".edu-dates").textContent = e.startYear + " - " + (isEn ? e.endYearEn : e.endYear);
+        const courses = edu.querySelector(".edu-courses");
+        if (courses) {
+          courses.innerHTML = (isEn ? e.coursesEn : e.coursesAr).map(c => "<li>" + escapeHtml(c) + "</li>").join("");
+        }
+      }
+
+      function fillSkills(groupIndex, itemsKey) {
+        const group = document.querySelectorAll(".skills-group")[groupIndex];
+        if (!group) return;
+        const label = group.querySelector(".skills-label");
+        const list = group.querySelector(".skills-list");
+        const labelsEn = ["Technical Skills", "Programming Languages", "Tools & Software", "Soft Skills", "Languages"];
+        const labelsAr = ["المهارات التقنية", "لغات البرمجة", "الأدوات والبرامج", "المهارات الشخصية", "اللغات"];
+        if (label) label.textContent = isEn ? labelsEn[groupIndex] : labelsAr[groupIndex];
+        if (list) {
+          const items = isEn ? s[itemsKey + "En"] : s[itemsKey + "Ar"];
+          if (itemsKey === "languages") {
+            list.innerHTML = items.map(it => "<li><span style='font-weight:700;'>" + escapeHtml(it.name) + "</span> <span class='lang-level'>- " + escapeHtml(it.level) + "</span></li>").join("");
+          } else {
+            list.innerHTML = items.map(it => "<li>" + escapeHtml(it) + "</li>").join("");
+          }
+        }
+      }
+      fillSkills(0, "technical");
+      fillSkills(1, "programming");
+      fillSkills(2, "tools");
+      fillSkills(3, "soft");
+      fillSkills(4, "languages");
+
+      const projectItems = document.querySelectorAll(".project-item");
+      projectItems.forEach((item, i) => {
+        if (proj[i]) {
+          const pr = proj[i];
+          item.querySelector(".project-name").textContent = isEn ? pr.titleEn : pr.titleAr;
+          item.querySelector(".project-tech").textContent = pr.tech;
+          item.querySelector(".project-desc").textContent = isEn ? pr.descEn : pr.descAr;
+        }
+      });
+
+      const certMsg = document.querySelector(".avoid-break:last-child p");
+      if (certs.length === 0 && certMsg) {
+        certMsg.textContent = isEn ? "No certificates recorded yet." : "لا توجد شهادات مسجلة حالياً.";
+      }
+
+      function setIf(selector, value) {
+        const el = document.querySelector(selector);
+        if (el && value) el.textContent = value;
+      }
+      function escapeHtml(text) {
+        if (!text) return text;
+        const div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+      }
+    });
+  </script>
+</body>
+</html>

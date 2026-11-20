@@ -1,0 +1,205 @@
+/* =====================================================================
+   Reset وأساسيات الموقع
+   ===================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-ar);
+  font-size: var(--font-size-md);
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color var(--transition-base), color var(--transition-base);
+  overflow-x: hidden;
+}
+
+/* دعم اللغة الإنجليزية - خط إنجليزي */
+body[lang="en"] {
+  font-family: var(--font-en);
+}
+
+/* العناوين */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: 1.3;
+  color: var(--color-primary);
+  margin-block-end: var(--space-md);
+}
+
+body[lang="en"] h1,
+body[lang="en"] h2,
+body[lang="en"] h3,
+body[lang="en"] h4,
+body[lang="en"] h5,
+body[lang="en"] h6 {
+  color: var(--color-primary);
+  font-family: var(--font-en);
+}
+
+/* النص */
+p {
+  margin-block-end: var(--space-md);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+ul, ol {
+  margin-block-end: var(--space-md);
+  padding-inline-start: var(--space-lg);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* إخفاء العناصر عند الطباعة (للصفحة الرئيسية) */
+.no-print {
+  display: none;
+}
+
+/* أدوات مساعدة */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.section {
+  padding-block: var(--space-3xl);
+}
+
+.section-title {
+  font-size: var(--font-size-2xl);
+  text-align: center;
+  margin-block-end: var(--space-xl);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  inset-block-end: -0.5rem;
+  inset-inline-start: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+  transform: translatey(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: var(--color-bg-alt);
+}
+
+/* بطاقة generic */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+[data-theme="dark"] .card {
+  background: var(--color-bg-alt);
+  border-color: var(--color-border-dark);
+  color: var(--color-text-dark);
+}
+
+.card:hover {
+  transform: translatey(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* hidden utilities */
+.hidden {
+  display: none !important;
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-base) ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translatey(12px); }
+  to { opacity: 1; transform: translatey(0); }
+}

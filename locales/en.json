@@ -1,0 +1,127 @@
+{
+  "site": {
+    "title": "Zakaria Yahya Al-Hasani | Data Scientist & AI Engineer",
+    "description": "Professional personal CV website for a Data Scientist and AI Engineer - Digital identity reflecting skills and experience"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "education": "Education",
+    "projects": "Projects",
+    "experience": "Experience",
+    "certificates": "Certificates",
+    "contact": "Contact",
+    "download": "Download CV",
+    "language": "Language",
+    "theme": "Theme",
+    "menu": "Menu"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Zakaria Yahya Al-Hasani",
+    "title": "Data Scientist & AI Engineer",
+    "subtitle": "I design intelligent data-driven solutions to solve complex problems, and I strive to build a professional digital identity reflecting my passion for technology and development.",
+    "contactBtn": "Contact Me",
+    "downloadBtn": "Download CV PDF"
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "I am Zakaria Yahya Al-Hasani, a Data Scientist and AI Specialist, passionate about transforming data into wise decisions and technical solutions that contribute to developing institutions and improving service quality.",
+    "interestsTitle": "Professional Interests",
+    "interests": [
+      "Data analysis and insight extraction",
+      "Machine learning and artificial intelligence",
+      "Designing and implementing intelligent systems",
+      "Web and application development",
+      "Process automation and business operations"
+    ],
+    "goalsTitle": "Goals and Ambitions",
+    "goals": [
+      "Contributing to technical projects with real impact",
+      "Continuously developing my AI and data science skills",
+      "Working with specialized technical teams to build innovative solutions",
+      "Contributing to the digital transformation of institutions"
+    ],
+    "strengthsTitle": "Key Strengths",
+    "strengths": [
+      "Analytical thinking and problem solving",
+      "Fast self-learning ability",
+      "Teamwork and effective communication",
+      "Commitment to quality and deadlines",
+      "Passion for modern technology"
+    ]
+  },
+  "skills": {
+    "title": "Skills",
+    "technical": "Technical Skills",
+    "programming": "Programming Languages",
+    "tools": "Tools & Software",
+    "soft": "Soft Skills",
+    "languages": "Languages"
+  },
+  "education": {
+    "title": "Education",
+    "institution": "Islamic University of Minnesota",
+    "degree": "Bachelor's Degree",
+    "field": "Data Science and Artificial Intelligence",
+    "start": "2024",
+    "end": "Expected 2026",
+    "certificatesTitle": "Courses & Certifications",
+    "certificates": [
+      "Diploma in English Language",
+      "Course in Fundamentals of Artificial Intelligence",
+      "Course in Comprehensive Accounting CAD Level 1",
+      "4 Research and Teaching Assistant Certificates",
+      "Course in Personality Analysis Skills",
+      "Course in Leadership Personality"
+    ]
+  },
+  "projects": {
+    "title": "Projects & Portfolio",
+    "view": "View",
+    "github": "GitHub",
+    "project1Title": "Hajj Automation Application",
+    "project1Desc": "I developed a website that enables the company to automate its operations in facilitating Hajj pilgrims—from pilgrim registration to arranging their needs such as accommodation, catering, and transportation. The system enabled the company to align with Saudi Ministry of Hajj requirements and created easy portals for employees and pilgrims, significantly improving pilgrim satisfaction with the services provided.",
+    "project1Tech": "HTML, CSS, JavaScript",
+    "project1Link": "#",
+    "project1GitHub": "#",
+    "addMore": "This section can be extended with new projects in the future."
+  },
+  "experience": {
+    "title": "Experience",
+    "noExperience": "No professional experience recorded yet. This section can be replaced with volunteer and training experience when available.",
+    "addExp": "Add Experience"
+  },
+  "certificates": {
+    "title": "Certificates & Achievements",
+    "noCerts": "No certificates recorded yet.",
+    "verify": "Verify"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "social": "Social Media",
+    "send": "Send Message",
+    "nameLabel": "Your Name",
+    "emailLabel": "Your Email",
+    "messageLabel": "Your Message",
+    "submit": "Submit",
+    "note": "All fields are required",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "portfolio": "Portfolio"
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "by": "Zakaria Yahya Al-Hasani",
+    "designedBy": "Design & Development"
+  },
+  "pdf": {
+    "download": "Download CV PDF",
+    "print": "Print CV",
+    "titleAr": "Zakaria Yahya Al-Hasani - CV",
+    "titleEn": "Zakaria Yahya Al-Hasani - CV"
+  }
+}

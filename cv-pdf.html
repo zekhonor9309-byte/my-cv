@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>زكريا يحيى الحسني - سيرة ذاتية</title>
+  <meta name="author" content="زكريا يحيى الحسني">
+  <meta name="description" content="سيرة ذاتية احترافية - زكريا يحيى الحسني - عالم بيانات وذكاء اصطناعي">
+
+  <!-- خطوط Google للعربية والإنجليزية -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================================================================
+       قالب السيرة الذاتية PDF - ATS Friendly
+       تصميم مستقل بالكامل عن الموقع الإلكتروني
+       خلفية بيضاء، نص أسود/رمادي داكن، تخطيط عمود واحد، لا صور أو أيقونات
+       ===================================================================== */
+
+    @page {
+      size: A4;
+      margin: 2cm 2cm 2.2cm 2cm;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html[lang="en"] {
+      font-family: "Inter", "Segoe UI", "Roboto", "Helvetica Neue", sans-serif;
+      direction: ltr;
+      text-align: left;
+    }
+
+    html[lang="ar"] {
+      font-family: "Cairo", "Tahoma", "Arial", sans-serif;
+      direction: rtl;
+      text-align: right;
+    }
+
+    body {
+      font-size: 11pt;
+      line-height: 1.6;
+      color: #1a1a1a;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* إخفاء عناصر التحكم في الطباعة فقط */
+    .no-print, .print-only-toggle, .nav, .button, .menu-toggle {
+      display: none !important;
+    }
+
+    /* فقط عند الطباعة أو المعاينة */
+    @media print {
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .no-print { display: none !important; }
+      a { color: #1a1a1a; text-decoration: none; }
+    }
+
+    .cv-container {
+      max-width: 100%;
+      padding: 0;
+    }
+
+    /* ----- الرأس (Header) ----- */
+    .cv-header {
+      border-bottom: 2px solid #1a1a1a;
+      padding-bottom: 18px;
+      margin-bottom: 26px;
+      text-align: center;
+    }
+
+    html[lang="en"] .cv-header { text-align: left; border-bottom: none; padding-left: 0; }
+
+    .cv-name {
+      font-size: 22pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.5px;
+    }
+
+    .cv-title {
+      font-size: 13pt;
+      font-weight: 600;
+      color: #4a4a4a;
+      margin: 0 0 10px 0;
+    }
+
+    .cv-subtitle {
+      font-size: 10pt;
+      color: #555555;
+      margin: 0 0 4px 0;
+      line-height: 1.5;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      font-size: 9.5pt;
+      color: #333333;
+      margin-top: 10px;
+    }
+
+    html[lang="en"] .cv-contact { justify-content: flex-start; }
+
+    .cv-contact span {
+      white-space: nowrap;
+    }
+
+    /* ----- عناوين الأقسام ----- */
+    .section-title {
+      font-size: 13pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 22px 0 10px 0;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid #1a1a1a;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+
+    /* ----- ملخص مهني ----- */
+    .summary {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+    html[lang="en"] .summary { text-align: left; }
+
+    /* ----- التعليم ----- */
+    .edu-item {
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-institution {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 3px 0;
+    }
+
+    .edu-degree {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #333333;
+      margin: 0 0 3px 0;
+    }
+
+    .edu-field {
+      font-size: 10pt;
+      color: #4a4a4a;
+      margin: 0 0 4px 0;
+    }
+
+    .edu-dates {
+      font-size: 9pt;
+      color: #666666;
+      font-style: normal;
+      margin: 0 0 6px 0;
+    }
+
+    .edu-courses {
+      font-size: 9.5pt;
+      color: #333333;
+      margin: 4px 0 0 0;
+      padding-inline-start: 18px;
+    }
+    html[lang="en"] .edu-courses { padding-inline-start: 18px; padding-inline-end: 0; }
+    html[lang="ar"] .edu-courses { padding-inline-end: 18px; padding-inline-start: 0; }
+
+    .edu-courses li {
+      margin-bottom: 3px;
+      list-style-type: disc;
+    }
+
+    /* ----- المهارات ----- */
+    .skills-group {
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+
+    .skills-group:last-child { margin-bottom: 0; }
+
+    .skills-label {
+      font-weight: 700;
+      color: #1a1a1a;
+      font-size: 10.5pt;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .skills-list li {
+      font-size: 9pt;
+      color: #333333;
+      border: 1px solid #cccccc;
+      border-radius: 12px;
+      padding: 3px 10px;
+      background: #fafafa;
+    }
+
+    /* اللغات كقائمة بسيطة */
+    .languages-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .languages-list li {
+      font-size: 9.5pt;
+      color: #333333;
+      margin-bottom: 4px;
+      border-bottom: 0.5px solid #eeeeee;
+      padding-bottom: 3px;
+    }
+
+    .lang-level {
+      font-weight: 400;
+      color: #666666;
+      font-size: 9pt;
+    }
+
+    /* ----- المشاريع ----- */
+    .project-item {
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .project-item:last-child { margin-bottom: 0; }
+
+    .project-name {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 3px 0;
+    }
+
+    .project-tech {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #4a4a4a;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin: 0 0 5px 0;
+      display: block;
+    }
+
+    .project-desc {
+      font-size: 10pt;
+      color: #2a2a2a;
+      margin: 0;
+      text-align: justify;
+    }
+    html[lang="en"] .project-desc { text-align: left; }
+
+    /* ----- الخبرات ----- */
+    .exp-item {
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+    }
+
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-company {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 2px 0;
+    }
+
+    .exp-role {
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #333333;
+      margin: 0 0 3px 0;
+    }
+
+    .exp-period {
+      font-size: 9pt;
+      color: #666666;
+      font-style: normal;
+      margin: 0 0 6px 0;
+    }
+
+    .exp-desc {
+      font-size: 10pt;
+      color: #2a2a2a;
+      margin: 0;
+      text-align: justify;
+    }
+    html[lang="en"] .exp-desc { text-align: left; }
+
+    /* ----- الشهادات ----- */
+    .cert-item {
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+
+    .cert-item:last-child { margin-bottom: 0; }
+
+    .cert-name {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 0 0 3px 0;
+    }
+
+    .cert-issuer {
+      font-size: 9.5pt;
+      color: #333333;
+      margin: 0 0 3px 0;
+    }
+
+    .cert-date {
+      font-size: 9pt;
+      color: #666666;
+      margin: 0;
+    }
+
+    /* ----- تجنب قطع الصفحات ----- */
+    .avoid-break {
+      page-break-inside: avoid;
+    }
+
+    /* رابط英文版 */
+    .lang-switch {
+      text-align: center;
+      margin-top: 6px;
+      font-size: 9pt;
+      color: #666666;
+      display: none; /* مخفي في الطباعة، يظهر في المتصفح */
+    }
+    @media print { .lang-switch { display: none !important; } }
+  </style>
+</head>
+<body lang="ar" dir="rtl">
+
+  <!-- رابط للنسخة الإنجليزية (يظهر في المتصفح فقط) -->
+  <div class="lang-switch no-print">
+    <a href="cv-pdf-en.html" style="color:#1a1a1a; text-decoration:underline;">عرض النسخة الإنجليزية (English Version)</a>
+  </div>
+
+  <div class="cv-container">
+    <header class="cv-header">
+      <h1 class="cv-name">زكريا يحيى الحسني</h1>
+      <div class="cv-title">عالم بيانات وذكاء اصطناعي</div>
+      <div class="cv-subtitle">
+        عالم بيانات ومتخصص في الذكاء الاصطناعي، شغوف بتحويل البيانات إلى قرارات حكيمة وحلول تقنية تساهم في تطوير المؤسسات وتحسين جودة الخدمات.
+      </div>
+      <div class="cv-contact">
+        <span>📍 المدينة، الدولة</span>
+        <span>✉️ your.email@example.com</span>
+        <span>📞 +966 50 000 0000</span>
+        <span>🔗 linkedin.com/in/your-profile</span>
+        <span>🐙 github.com/your-profile</span>
+      </div>
+    </header>
+
+    <!-- Professional Summary -->
+    <section class="avoid-break">
+      <h2 class="section-title">Professional Summary</h2>
+      <p class="summary">
+        أنا زكريا يحيى الحسني، عالم بيانات ومتخصص في الذكاء الاصطناعي، شغوف بتحويل البيانات إلى قرارات حكيمة وحلول تقنية تساهم في تطوير المؤسسات وتحسين جودة الخدمات. أمتلك مهارات في تحليل البيانات، التعلم الآلي، وتصميم الأنظمة الذكية، مع الالتزام بالجودة والتعلم الذاتي المستمر.
+      </p>
+    </section>
+
+    <!-- Education -->
+    <section class="avoid-break">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <div class="edu-institution">الجامعة الإسلامية بمنيسوتا</div>
+        <div class="edu-degree">بكالوريوس</div>
+        <div class="edu-field">علم البيانات والذكاء الاصطناعي</div>
+        <div class="edu-dates">2024 - متوقع التخرج 2026</div>
+        <ul class="edu-courses">
+          <li>دبلوم في اللغة الإنجليزية</li>
+          <li>دورة في أسس الذكاء الاصطناعي</li>
+          <li>دورة في المحاسبة الشاملة CAD المستوى الأول</li>
+          <li>4 شهادات مساعدة بحث وتدريس</li>
+          <li>دورة في مهارات تحليل الشخصية</li>
+          <li>دورة في الشخصية القيادية</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="avoid-break">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-group">
+        <span class="skills-label">Technical Skills</span>
+        <ul class="skills-list">
+          <li>تحليل البيانات</li>
+          <li>النماذج الإحصائية</li>
+          <li>تصور البيانات (Data Visualization)</li>
+          <li>قواعد البيانات SQL</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Programming Languages</span>
+        <ul class="skills-list">
+          <li>Python</li>
+          <li>R</li>
+          <li>SQL</li>
+          <li>JavaScript</li>
+          <li>HTML/CSS</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Tools &amp; Software</span>
+        <ul class="skills-list">
+          <li>Jupyter Notebook</li>
+          <li>Pandas</li>
+          <li>NumPy</li>
+          <li>Matplotlib</li>
+          <li>Scikit-learn</li>
+          <li>Git</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Soft Skills</span>
+        <ul class="skills-list">
+          <li>التفكير التحليلي</li>
+          <li>حل المشكلات</li>
+          <li>التعلم الذاتي</li>
+          <li>العمل الجماعي</li>
+          <li>التواصل الفعال</li>
+        </ul>
+      </div>
+
+      <div class="skills-group">
+        <span class="skills-label">Languages</span>
+        <ul class="languages-list">
+          <li><span style="font-weight:700;">العربية</span> <span class="lang-level">- لغة أم</span></li>
+          <li><span style="font-weight:700;">الإنجليزية</span> <span class="lang-level">- متوسط</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="avoid-break">
+      <h2 class="section-title">Projects</h2>
+      <div class="project-item">
+        <div class="project-name">تطبيق أتمتة لشركة حج</div>
+        <span class="project-tech">HTML, CSS, JavaScript</span>
+        <p class="project-desc">
+          عملت موقع يمكن الشركة من أتمتة عملها في تحجيج ضيوف الرحمن من تسجيل الحجاج وترتيب الاحتياجات اللازمة لهم من تسكين وإعاشة ونقل. مكّن الموقع الشركة من حصر متطلبات وزارة الحج والعمل عليها، وكذلك عمل يوزرات للموظفين والحجاج بطرق سهلة مما مكن الشركة من رفع مستوى رضا الحاج عن الخدمات المقدمة.
+        </p>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="avoid-break">
+      <h2 class="section-title">Certifications</h2>
+      <p style="font-size:9.5pt; color:#666666; margin:0;">لا توجد شهادات مسجلة حالياً.</p>
+    </section>
+  </div>
+
+  <script src="data/cv-data.js"></script>
+  <script>
+    /**
+     * تعبئة صفحة PDF من البيانات المركزية (cv-data.js)
+     * يضمن أن PDF يعتمد على نفس البيانات المستخدمة في الموقع
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+      const isAr = document.documentElement.lang === "ar";
+      const d = window.CV_DATA;
+      const p = d.personal;
+      const e = d.education;
+      const s = d.skills;
+      const proj = d.projects || [];
+      const certs = d.certificates || [];
+
+      // ---- الرأس ----
+      setIf(".cv-name", isAr ? p.fullNameAr : p.fullNameEn);
+      setIf(".cv-title", isAr ? p.titleAr : p.titleEn);
+      setIf(".cv-subtitle", isAr ? p.summaryAr : p.summaryEn);
+
+      // معلومات الاتصال في الرأس
+      setIf(".cv-contact span:nth-child(1)", "📍 " + p.location);
+      setIf(".cv-contact span:nth-child(2)", "✉️ " + p.email);
+      setIf(".cv-contact span:nth-child(3)", "📞 " + p.phone);
+      setIf(".cv-contact span:nth-child(4)", "🔗 " + p.linkedin);
+      setIf(".cv-contact span:nth-child(5)", "🐙 " + p.github);
+
+      // ---- الملخص المهني ----
+      setIf(".summary", isAr ? p.summaryAr : p.summaryEn);
+
+      // ---- التعليم ----
+      const edu = document.querySelector(".edu-item");
+      if (edu && e) {
+        edu.querySelector(".edu-institution").textContent = isAr ? e.institutionAr : e.institutionEn;
+        edu.querySelector(".edu-degree").textContent = isAr ? e.degreeAr : e.degreeEn;
+        edu.querySelector(".edu-field").textContent = isAr ? e.fieldAr : e.fieldEn;
+        edu.querySelector(".edu-dates").textContent = e.startYear + " - " + (isAr ? e.endYear : e.endYearEn);
+        const courses = edu.querySelector(".edu-courses");
+        if (courses) {
+          courses.innerHTML = (isAr ? e.coursesAr : e.coursesEn).map(c => "<li>" + escapeHtml(c) + "</li>").join("");
+        }
+      }
+
+      // ---- المهارات ----
+      function fillSkills(groupIndex, labelKey, itemsKey) {
+        const group = document.querySelectorAll(".skills-group")[groupIndex];
+        if (!group) return;
+        const label = group.querySelector(".skills-label");
+        const list = group.querySelector(".skills-list");
+        if (label) label.textContent = isAr ? s[labelKey] : (labelKey === "technicalAr" ? "Technical Skills" : labelKey);
+        //labels are English fixed; use proper mapping
+        const labelsEn = ["Technical Skills", "Programming Languages", "Tools & Software", "Soft Skills", "Languages"];
+        const labelsAr = ["المهارات التقنية", "لغات البرمجة", "الأدوات والبرامج", "المهارات الشخصية", "اللغات"];
+        if (label) label.textContent = isAr ? labelsAr[groupIndex] : labelsEn[groupIndex];
+        if (list) {
+          const items = isAr ? s[itemsKey + "Ar"] : s[itemsKey + "En"];
+          if (itemsKey === "languages") {
+            list.innerHTML = items.map(it => "<li><span style='font-weight:700;'>" + escapeHtml(it.name) + "</span> <span class='lang-level'>- " + escapeHtml(it.level) + "</span></li>").join("");
+          } else {
+            list.innerHTML = items.map(it => "<li>" + escapeHtml(it) + "</li>").join("");
+          }
+        }
+      }
+      fillSkills(0, "technicalAr", "technical");
+      fillSkills(1, "programmingAr", "programming");
+      fillSkills(2, "toolsAr", "tools");
+      fillSkills(3, "softAr", "soft");
+      fillSkills(4, "languagesAr", "languages");
+
+      // ---- المشاريع ----
+      const projSection = document.querySelector("h2.section-title + .project-item").parentElement;
+      const projContainer = document.querySelector(".section-title + .project-item") ? document.querySelector(".section-title + .project-item").parentElement : null;
+      // أسهل: ابحث عن كل project-item واملأ من 데이터
+      const projectItems = document.querySelectorAll(".project-item");
+      projectItems.forEach((item, i) => {
+        if (proj[i]) {
+          const pr = proj[i];
+          item.querySelector(".project-name").textContent = isAr ? pr.titleAr : pr.titleEn;
+          item.querySelector(".project-tech").textContent = pr.tech;
+          item.querySelector(".project-desc").textContent = isAr ? pr.descAr : pr.descEn;
+        }
+      });
+
+      // ---- الشهادات ----
+      const certSection = document.querySelector(".certifications p, .cert-item");
+      const certMsg = document.querySelector(".avoid-break:last-child p");
+      if (certs.length === 0 && certMsg) {
+        certMsg.textContent = isAr ? "لا توجد شهادات مسجلة حالياً." : "No certificates recorded yet.";
+      }
+
+      // helper
+      function setIf(selector, value) {
+        const el = document.querySelector(selector);
+        if (el && value) el.textContent = value;
+      }
+      function escapeHtml(text) {
+        if (!text) return text;
+        const div = document.createElement("div");
+        div.textContent = text;
+        return div.innerHTML;
+      }
+    });
+  </script>
+</body>
+</html>
